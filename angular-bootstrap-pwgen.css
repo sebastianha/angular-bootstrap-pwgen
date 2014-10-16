@@ -1,0 +1,47 @@
+.angular-bootstrap-pwgen {
+	height : 34px;
+}
+
+.angular-bootstrap-pwgen-fixed-font {
+	font-family : 'Courier New', Arial;
+	font-weight : bold;
+	font-size   : 18px;
+}
+
+.angular-bootstrap-pwgen-progress-div {
+	position      : relative;
+	width         : 100%;
+	height        : 32px;
+	top           : -33px;
+	padding-right : 40px;
+	z-index       : 3;
+	opacity       : 0.5;
+}
+
+.angular-bootstrap-pwgen-progress-div.ng-hide-add.ng-hide-add-active {
+	-webkit-transition : all linear 1s;
+	-moz-transition    : all linear 1s;
+	-ms-transition     : all linear 1s;
+	-o-transition      : all linear 1s;
+	transition         : all linear 1s;
+}
+
+.angular-bootstrap-pwgen-progress-div.ng-hide-remove.ng-hide-remove-active {
+	-webkit-transition : all linear 0.5s;
+	-moz-transition    : all linear 0.5s;
+	-ms-transition     : all linear 0.5s;
+	-o-transition      : all linear 0.5s;
+	transition         : all linear 0.5s;
+}
+
+.angular-bootstrap-pwgen-progress-div.ng-hide {
+	opacity : 0;
+}
+
+.angular-bootstrap-pwgen-progress-bar {
+	-webkit-transition : none;
+	-moz-transition    : none;
+	-ms-transition     : none;
+	-o-transition      : none;
+	transition         : none;
+}

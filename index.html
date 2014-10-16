@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
+	<script src="bower_components/jquery/dist/jquery.js"></script>
+	<script src="bower_components/angular/angular.js"></script>
+	<script src="bower_components/angular-animate/angular-animate.js"></script>
+	<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+	<script src="angular-bootstrap-pwgen.js"></script>
+	<link rel="stylesheet" type="text/css" href="angular-bootstrap-pwgen.css">
+	<script src="app.js"></script>
+</head>
+<body ng-app="angular-bootstrap-pwgen-test" ng-controller="index">
+<div class="container">
+	<div class="row">
+		<br>
+		<pwgen ng-model="passwordModel" length="20"></pwgen>
+		<br>
+		Model: <span ng-bind="passwordModel"></span>
+	</div>
+</div>
+</body>
+</html>
