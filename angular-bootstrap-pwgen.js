@@ -61,6 +61,12 @@ angular.module("ui.pwgen", []).directive("pwgen", function($timeout) {
 			};
 
 
+			/*
+			 * password-generator
+			 * Copyright(c) 2011-2013 Bermi Ferrer <bermi@bermilabs.com>
+			 * From https://github.com/bermi/password-generator
+			 * MIT Licensed
+			 */
 			scope.vowel = /[aeiouAEIOU]$/;
 			scope.consonant = /[bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ]$/;
 			scope.generatePassword = function (length, memorable, pattern, prefix) {
