@@ -5,7 +5,10 @@
     "Sebastian Hammerl, Getslash GmbH"
   ],
   "description": "A Twitter Bootstrap styled password input field with animated password generator to use with AngularJS",
-  "main": "angular-bootstrap-pwgen.js",
+  "main": [
+	  "angular-bootstrap-pwgen.js",
+	  "angular-bootstrap-pwgen.css"
+  ],
   "keywords": [
     "angular",
     "angularjs",

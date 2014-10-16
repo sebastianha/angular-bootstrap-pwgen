@@ -20,10 +20,14 @@ Add "ui.pwgen" to your modules list. Then you can use it like follows:
 ```
 <pwgen
     ng-model="passwordModel"
+    length="20"                 (Optional)
+    placeholder="Password"      (Optional)
 ></pwgen>
 ```
 
 See index.html for examples and how it works.
+
+Use ngAnimate for activate fade-in and fade-out of the progress bar while generating.
 
 ### Testing:
 

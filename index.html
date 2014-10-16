@@ -13,10 +13,45 @@
 <body ng-app="angular-bootstrap-pwgen-test" ng-controller="index">
 <div class="container">
 	<div class="row">
+
+		<h3>Default settings</h3>
+		<pwgen ng-model="passwordModel[0]"></pwgen>
 		<br>
-		<pwgen ng-model="passwordModel" length="20"></pwgen>
+		Model: <span ng-bind="passwordModel[0]"></span>
+		<br><br>
+		<pre>&lt;pwgen
+    ng-model="passwordModel[0]"
+&gt;&lt;/pwgen&gt</pre>
 		<br>
-		Model: <span ng-bind="passwordModel"></span>
+
+		<h3>Password Length 20</h3>
+		<pwgen ng-model="passwordModel[1]" length="20"></pwgen>
+		<br>
+		Model: <span ng-bind="passwordModel[1]"></span>
+		<br><br>
+		<pre>&lt;pwgen
+    ng-model="passwordModel[1]"
+    length="20"
+&gt;&lt;/pwgen&gt</pre>
+		<br>
+
+		<h3>Placeholder</h3>
+		<pwgen ng-model="passwordModel[2]" placeholder="Enter Password or Hit Generate"></pwgen>
+		<br>
+		Model: <span ng-bind="passwordModel[2]"></span>
+		<br><br>
+		<pre>&lt;pwgen
+    ng-model="passwordModel[2]"
+    placeholder="Enter Password or Hit Generate"
+&gt;&lt;/pwgen&gt</pre>
+		<br>
+
+		<h3>app.js:</h3>
+			<pre>
+angular.module("angular-bootstrap-pwgen-test", ["ngAnimate", "ui.pwgen"]).controller("index", function($scope) {
+	$scope.passwordModel = ["", "", ""];
+});
+</pre>
 	</div>
 </div>
 </body>

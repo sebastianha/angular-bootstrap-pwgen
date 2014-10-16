@@ -3,42 +3,43 @@
 angular.module("ui.pwgen", []).directive("pwgen", function($timeout) {
 	return {
 		scope: {
-			model: "=ngModel",
-			length: "@"
+			model      : "=ngModel",
+			length     : "@",
+			placeholder: "@"
 		},
-		require: "ngModel",
+		require : "ngModel",
 		restrict: "E",
-		replace: "true",
-		template: "" + 
+		replace : "true",
+		template: "" +
 			"<div                  class=\"             angular-bootstrap-pwgen            \">" +
-				"<div              class=\"input-group                                     \">" + 
-					"<input        class=\"form-control                                    \" ng-model=\"password\" ng-class=\"{'angular-bootstrap-pwgen-fixed-font': passwordNotNull}\" placeholder=\"Enter Password\">" + 
-					"<span         class=\"input-group-btn                                 \">" + 
-						"<button   class=\"btn btn-default                                 \" type=\"button\" ng-click=\"generatePasswordStart()\">" + 
-							"<span class=\"glyphicon glyphicon-random                      \"></span>" + 
-						"</button>" + 
-					"</span>" + 
+				"<div              class=\"input-group                                     \">" +
+					"<input        class=\"form-control                                    \" ng-model=\"password\" ng-class=\"{'angular-bootstrap-pwgen-fixed-font': passwordNotNull}\" placeholder=\"{{placeholder}}\">" +
+					"<span         class=\"input-group-btn                                 \">" +
+						"<button   class=\"btn btn-default                                 \" type=\"button\" ng-click=\"generatePasswordStart()\">" +
+							"<span class=\"glyphicon glyphicon-random                      \"></span>" +
+						"</button>" +
+					"</span>" +
 				"</div>" +
-				"<div              class=\"progress     angular-bootstrap-pwgen-progress-div\" ng-show=\"progressDivShow\">" + 
-					"<div          class=\"progress-bar angular-bootstrap-pwgen-progress-bar\" ng-style=\"progressWidth\">" + 
-					"</div>" + 
-				"</div>" + 
+				"<div              class=\"progress     angular-bootstrap-pwgen-progress-div\" ng-show=\"progressDivShow\">" +
+					"<div          class=\"progress-bar angular-bootstrap-pwgen-progress-bar\" ng-style=\"progressWidth\">" +
+					"</div>" +
+				"</div>" +
 			"</div>",
 		link: function(scope, elem, attrs, modelCtrl) {
 			scope.$watch("model", function () {
 				scope.password = scope.model;
 			});
-			
+
 			scope.passwordNotNull = false;
 			scope.$watch("password", function () {
 				scope.model = scope.password;
-				if(scope.password !== null && scope.password !== "") {
+				if(scope.password !== undefined && scope.password !== null && scope.password !== "") {
 					scope.passwordNotNull = true;
 				} else {
 					scope.passwordNotNull = false;
 				}
 			});
-			
+
 			scope.progressDivShow = false;
 			scope.generatePasswordStart = function() {
 				scope.progressDivShow = true;
@@ -58,23 +59,23 @@ angular.module("ui.pwgen", []).directive("pwgen", function($timeout) {
 					}
 				}, 10);
 			};
-			
-			
+
+
 			scope.vowel = /[aeiouAEIOU]$/;
 			scope.consonant = /[bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ]$/;
 			scope.generatePassword = function (length, memorable, pattern, prefix) {
 				var char, n;
-				if (length == null) {
+				if (length === undefined || length === null) {
 					length = 10;
 				}
-				if (memorable == null) {
+				if (memorable === undefined || memorable === null) {
 					memorable = true;
 				}
-				if (pattern == null) {
+				if (pattern === undefined || pattern === null) {
 					pattern = /[a-zA-Z0-9]/;
 				}
-				if (prefix == null) {
-					prefix = '';
+				if (prefix === undefined || prefix === null) {
+					prefix = "";
 				}
 				if (prefix.length >= length) {
 					return prefix;
