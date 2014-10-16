@@ -3,9 +3,9 @@ angular-bootstrap-pwgen
 
 Bootstrap styled password input field with animated password generator for AngularJS
 
+Screenshot:
 
-### Description:
-
+![Screenshot](/pwgen.gif?raw=true "Password generator in action")
 
 ### Installation via Bower:
 
