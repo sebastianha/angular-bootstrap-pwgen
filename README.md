@@ -1,7 +1,7 @@
 angular-bootstrap-pwgen
 =======================
 
-Bootstrap styled password input field with animated password generator for AngularJS
+An animated password generator for AngularJS styled to fit the Twitter Bootstrap standard design
 
 Screenshot:
 
@@ -25,7 +25,7 @@ Add "ui.pwgen" to your modules list. Then you can use it like follows:
 ></pwgen>
 ```
 
-See index.html for examples and how it works.
+See index.html and app.js for examples and how it works.
 
 Use ngAnimate for activate fade-in and fade-out of the progress bar while generating.
 

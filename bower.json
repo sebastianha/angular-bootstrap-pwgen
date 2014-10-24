@@ -4,20 +4,23 @@
   "authors": [
     "Sebastian Hammerl, Getslash GmbH"
   ],
-  "description": "A Twitter Bootstrap styled password input field with animated password generator to use with AngularJS",
+  "description": "An animated password generator for AngularJS styled to fit the Twitter Bootstrap standard design",
   "main": [
-	  "angular-bootstrap-pwgen.js",
-	  "angular-bootstrap-pwgen.css"
+    "angular-bootstrap-pwgen.js",
+    "angular-bootstrap-pwgen.css"
   ],
   "keywords": [
     "angular",
     "angularjs",
+    "directive",
+    "ui",
     "bootstrap",
-    "password",
-    "generator",
-    "generate",
+    "form",
+    "input",
     "pwgen",
-    "input"
+    "generate",
+    "password",
+    "generator"
   ],
   "license": "MIT",
   "ignore": [
