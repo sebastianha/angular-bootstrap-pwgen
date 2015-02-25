@@ -46,10 +46,21 @@
 &gt;&lt;/pwgen&gt</pre>
 		<br>
 
+		<h3>Disabled</h3>
+		<pwgen ng-model="passwordModel[3]" ng-disabled="true"></pwgen>
+		<br>
+		Model: <span ng-bind="passwordModel[3]"></span>
+		<br><br>
+		<pre>&lt;pwgen
+    ng-model="passwordModel[3]"
+    ng-disabled="true"
+&gt;&lt;/pwgen&gt</pre>
+		<br>
+
 		<h3>app.js:</h3>
 			<pre>
 angular.module("angular-bootstrap-pwgen-test", ["ngAnimate", "ui.pwgen"]).controller("index", function($scope) {
-	$scope.passwordModel = ["", "", ""];
+	$scope.passwordModel = ["", "", "", ""];
 });
 </pre>
 	</div>

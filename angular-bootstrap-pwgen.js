@@ -4,6 +4,7 @@ angular.module("ui.pwgen", []).directive("pwgen", function($timeout) {
 	return {
 		scope: {
 			model      : "=ngModel",
+			disabled   : "=ngDisabled",
 			length     : "@",
 			placeholder: "@"
 		},
@@ -13,9 +14,9 @@ angular.module("ui.pwgen", []).directive("pwgen", function($timeout) {
 		template: "" +
 			"<div                  class=\"             angular-bootstrap-pwgen            \">" +
 				"<div              class=\"input-group                                     \">" +
-					"<input        class=\"form-control                                    \" ng-model=\"password\" ng-class=\"{'angular-bootstrap-pwgen-fixed-font': passwordNotNull}\" placeholder=\"{{placeholder}}\">" +
+					"<input        class=\"form-control                                    \" ng-model=\"password\" ng-disabled=\"disabled\" ng-class=\"{'angular-bootstrap-pwgen-fixed-font': passwordNotNull}\" placeholder=\"{{placeholder}}\">" +
 					"<span         class=\"input-group-btn                                 \">" +
-						"<button   class=\"btn btn-default                                 \" type=\"button\" ng-click=\"generatePasswordStart()\">" +
+						"<button   class=\"btn btn-default                                 \" type=\"button\" ng-disabled=\"disabled\" ng-click=\"generatePasswordStart()\">" +
 							"<span class=\"glyphicon glyphicon-random                      \"></span>" +
 						"</button>" +
 					"</span>" +
