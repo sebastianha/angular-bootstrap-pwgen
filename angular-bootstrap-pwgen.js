@@ -6,7 +6,8 @@ angular.module("ui.pwgen", []).directive("pwgen", function($timeout) {
 			model      : "=ngModel",
 			disabled   : "=ngDisabled",
 			length     : "@",
-			placeholder: "@"
+			placeholder: "@",
+			showProgress: "@"
 		},
 		require : "ngModel",
 		restrict: "E",
@@ -41,8 +42,11 @@ angular.module("ui.pwgen", []).directive("pwgen", function($timeout) {
 				}
 			});
 
+			scope.showProgress = scope.showProgress || true;
+
 			scope.progressDivShow = false;
 			scope.generatePasswordStart = function() {
+				if (!scope.showProgress) return scope.generatePassword(scope.length, false);
 				scope.progressDivShow = true;
 				scope.progressValue = 0;
 				scope.progressWidth = {"width": scope.progressValue + "%"};
