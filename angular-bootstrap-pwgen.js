@@ -42,11 +42,11 @@ angular.module("ui.pwgen", []).directive("pwgen", function($timeout) {
 				}
 			});
 
-			scope.showProgress = scope.showProgress || true;
+			var showProgress = scope.showProgress() || true;
 
 			scope.progressDivShow = false;
 			scope.generatePasswordStart = function() {
-				if (!scope.showProgress) return scope.generatePassword(scope.length, false);
+				if (!showProgress) return scope.generatePassword(scope.length, false);
 				scope.progressDivShow = true;
 				scope.progressValue = 0;
 				scope.progressWidth = {"width": scope.progressValue + "%"};
