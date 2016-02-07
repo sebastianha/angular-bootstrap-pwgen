@@ -7,7 +7,7 @@ angular.module("ui.pwgen", []).directive("pwgen", function($timeout) {
 			disabled   : "=ngDisabled",
 			length     : "@",
 			placeholder: "@",
-			showProgress: "@"
+			showProgress: "&"
 		},
 		require : "ngModel",
 		restrict: "E",
