@@ -20,6 +20,7 @@ Add "ui.pwgen" to your modules list. Then you can use it like follows:
 ```
 <pwgen
     ng-model="passwordModel"
+    animate="true"              (Optional)
     length="20"                 (Optional)
     placeholder="Password"      (Optional)
     ng-disabled="true"          (Optional)
