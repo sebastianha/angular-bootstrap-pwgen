@@ -6,17 +6,18 @@ angular.module("ui.pwgen", []).directive("pwgen", function($timeout) {
 			model      : "=ngModel",
 			disabled   : "=ngDisabled",
 			length     : "@",
-			placeholder: "@"
+			placeholder: "@",
+			animate    : "="
 		},
 		require : "ngModel",
 		restrict: "E",
 		replace : "true",
 		template: "" +
-			"<div                  class=\"             angular-bootstrap-pwgen            \">" +
+			"<div                  class=\"angular-bootstrap-pwgen                         \">" +
 				"<div              class=\"input-group                                     \">" +
 					"<input        class=\"form-control                                    \" ng-model=\"password\" ng-disabled=\"disabled\" ng-class=\"{'angular-bootstrap-pwgen-fixed-font': passwordNotNull}\" placeholder=\"{{placeholder}}\">" +
 					"<span         class=\"input-group-btn                                 \">" +
-						"<button   class=\"btn btn-default                                 \" type=\"button\" ng-disabled=\"disabled\" ng-click=\"generatePasswordStart()\">" +
+						"<button   class=\"btn btn-default                                 \" type=\"button\"       ng-disabled=\"disabled\" ng-click=\"generatePasswordStart()\">" +
 							"<span class=\"glyphicon glyphicon-random                      \"></span>" +
 						"</button>" +
 					"</span>" +
@@ -43,10 +44,14 @@ angular.module("ui.pwgen", []).directive("pwgen", function($timeout) {
 
 			scope.progressDivShow = false;
 			scope.generatePasswordStart = function() {
-				scope.progressDivShow = true;
-				scope.progressValue = 0;
-				scope.progressWidth = {"width": scope.progressValue + "%"};
-				scope.generatePasswordProgress();
+				if(scope.animate === true) {
+					scope.progressDivShow = true;
+					scope.progressValue = 0;
+					scope.progressWidth = {"width": scope.progressValue + "%"};
+					scope.generatePasswordProgress();
+				} else {
+					scope.password = scope.generatePassword(scope.length, false);
+				}
 			};
 			scope.generatePasswordProgress = function() {
 				$timeout(function() {

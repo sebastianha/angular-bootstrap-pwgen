@@ -14,7 +14,7 @@
 <div class="container">
 	<div class="row">
 
-		<h3>Default settings</h3>
+		<h3>Default Settings</h3>
 		<pwgen ng-model="passwordModel[0]"></pwgen>
 		<br>
 		Model: <span ng-bind="passwordModel[0]"></span>
@@ -24,35 +24,45 @@
 &gt;&lt;/pwgen&gt</pre>
 		<br>
 
-		<h3>Password Length 20</h3>
-		<pwgen ng-model="passwordModel[1]" length="20"></pwgen>
+		<h3>Animate Generation Process</h3>
+		<pwgen ng-model="passwordModel[1]" animate="true"></pwgen>
 		<br>
 		Model: <span ng-bind="passwordModel[1]"></span>
 		<br><br>
 		<pre>&lt;pwgen
     ng-model="passwordModel[1]"
-    length="20"
 &gt;&lt;/pwgen&gt</pre>
 		<br>
 
-		<h3>Placeholder</h3>
-		<pwgen ng-model="passwordModel[2]" placeholder="Enter Password or Hit Generate"></pwgen>
+		<h3>Password Length 20</h3>
+		<pwgen ng-model="passwordModel[2]" length="20"></pwgen>
 		<br>
 		Model: <span ng-bind="passwordModel[2]"></span>
 		<br><br>
 		<pre>&lt;pwgen
     ng-model="passwordModel[2]"
-    placeholder="Enter Password or Hit Generate"
+    length="20"
 &gt;&lt;/pwgen&gt</pre>
 		<br>
 
-		<h3>Disabled</h3>
-		<pwgen ng-model="passwordModel[3]" ng-disabled="true"></pwgen>
+		<h3>Placeholder</h3>
+		<pwgen ng-model="passwordModel[3]" placeholder="Enter Password or Hit Generate"></pwgen>
 		<br>
 		Model: <span ng-bind="passwordModel[3]"></span>
 		<br><br>
 		<pre>&lt;pwgen
     ng-model="passwordModel[3]"
+    placeholder="Enter Password or Hit Generate"
+&gt;&lt;/pwgen&gt</pre>
+		<br>
+
+		<h3>Disabled</h3>
+		<pwgen ng-model="passwordModel[4]" ng-disabled="true"></pwgen>
+		<br>
+		Model: <span ng-bind="passwordModel[4]"></span>
+		<br><br>
+		<pre>&lt;pwgen
+    ng-model="passwordModel[4]"
     ng-disabled="true"
 &gt;&lt;/pwgen&gt</pre>
 		<br>
@@ -60,7 +70,7 @@
 		<h3>app.js:</h3>
 			<pre>
 angular.module("angular-bootstrap-pwgen-test", ["ngAnimate", "ui.pwgen"]).controller("index", function($scope) {
-	$scope.passwordModel = ["", "", "", ""];
+	$scope.passwordModel = ["", "", "", "", ""];
 });
 </pre>
 	</div>
