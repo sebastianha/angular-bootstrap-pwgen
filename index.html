@@ -68,10 +68,21 @@
 &gt;&lt;/pwgen&gt</pre>
 		<br>
 
+		<h3>Initialize With Password</h3>
+		<pwgen ng-model="passwordModel[5]" init="true"></pwgen>
+		<br>
+		Model: <span ng-bind="passwordModel[5]"></span>
+		<br><br>
+		<pre>&lt;pwgen
+    ng-model="passwordModel[5]"
+    init="true"
+&gt;&lt;/pwgen&gt</pre>
+		<br>
+
 		<h3>app.js:</h3>
 			<pre>
 angular.module("angular-bootstrap-pwgen-test", ["ngAnimate", "ui.pwgen"]).controller("index", function($scope) {
-	$scope.passwordModel = ["", "", "", "", ""];
+	$scope.passwordModel = ["", "", "", "", "", ""];
 });
 </pre>
 	</div>

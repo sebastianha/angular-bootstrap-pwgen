@@ -7,7 +7,8 @@ angular.module("ui.pwgen", []).directive("pwgen", function($timeout) {
 			disabled   : "=ngDisabled",
 			length     : "@",
 			placeholder: "@",
-			animate    : "="
+			animate    : "=",
+			init       : "="
 		},
 		require : "ngModel",
 		restrict: "E",
@@ -109,6 +110,10 @@ angular.module("ui.pwgen", []).directive("pwgen", function($timeout) {
 				}
 				return scope.generatePassword(length, memorable, pattern, "" + prefix + char);
 			};
+
+			if(scope.init === true && (scope.model === undefined || scope.model === null || scope.model === "")) {
+				scope.model = scope.generatePassword(scope.length, false);
+			}
 		}
 	};
 });
