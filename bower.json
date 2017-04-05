@@ -1,6 +1,6 @@
 {
   "name": "angular-bootstrap-pwgen",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "authors": [
     "Sebastian Hammerl, Getslash GmbH"
   ],
@@ -23,6 +23,7 @@
     "generator"
   ],
   "license": "MIT",
+  "homepage": "https://github.com/sebastianha/angular-bootstrap-pwgen",
   "ignore": [
     "**/.*",
     "node_modules",
